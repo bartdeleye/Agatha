@@ -15,7 +15,7 @@ namespace Tests.RequestProcessorTests.Interceptors
         protected override void Given()
         {
             IoC.Container = null;
-            new ServiceLayerConfiguration(GetType().Assembly, GetType().Assembly, new Agatha.Castle.Container())
+            new ServiceLayerConfiguration(GetType().Assembly, GetType().Assembly, typeof(Agatha.Castle.Container))
                .RegisterRequestHandlerInterceptor<TestInterceptor>()
                .Initialize();
 
